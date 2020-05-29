@@ -9,7 +9,7 @@ Server.use(express.static('public'));
 Server.use(cors());
 
 Server.get('/',(req,res) =>{
-  res.sendFile(__dirname + '/views/index.html');
+  res.sendFile(__dirname + '/public/views/index.html');
 })
 
 Server.listen(process.env.PORT || 3000, function () {
