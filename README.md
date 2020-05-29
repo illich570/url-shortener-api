@@ -1,2 +1,2 @@
-# basic-express-boilerplate
-Basic express boilerplate to use as a server for example projects.
+# url-shortener-api
+FCC basic API project for APIs and Microservices Certification.
