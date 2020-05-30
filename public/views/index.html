@@ -4,12 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/styles.css" type="text/css">
+  <link rel="stylesheet" href="/css/modal.css" type="text/css">
+  <script src="https://kit.fontawesome.com/35e9411073.js" crossorigin="anonymous"></script>
   <title>Boilerplate</title>
 </head>
-<body>
-  <h1>Hi, i'm a simple Express boilerplate</h1>
-  <div class="container mx-auto bg-blue-500">
-    hola
+<body class="bg-purple-200">
+  <header>
+    <h1 class="text-xl text-center">URL-Shortener API</h1>
+  </header>
+  <main role="main" class="mx-4 text-sm">
+
+    <p class="text-justify px-3 py-2 mb-2">Esto es un ejercicio de una API que permita acortar una url valida entregada por el usuario.
+      Será almacenada en una base de datos y se podrá consultar mediante la URL de este proyecto.
+    </p>
+
+    <form method="POST" action="/api/shorturl/new" class="bg-white shadow-md rounded px-6 py-4">
+      <div class="flex flex-col text-center">
+        <label class="block text-gray-500 font-bold mb-2" id="url">URL a acortar:</label>
+        <input name="url" id="url" placeholder="E.X: https://freecodecamp.org" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 text-xs"/>
+        <div class="mt-4 flex items-center self-center" type="text" value="soy tu mama">
+          <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+            type="submit">
+          Acortar
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <div class="text-center block flex flex-col my-10">
+      <span>Ejemplo de uso:</span>
+      <span>[Project_URL/api/shorturl/1]</span>
+      <span>Te llevara a: https://codepen.io/illich570</span>
+    </div>
+  </main>
+
+  <div class="modalDialog" id="openModal">
+    <div class="modal-content">
+      <p> prueba numero 1</p>
+    </div>
   </div>
-</body>
+
+    <footer class="fixed bottom-0 flex flex-col w-full text-center">
+      <span class="text-sm">Url-shortener made by @IllichR</span>
+      <div class="text-purple-500">
+        <a href="https://www.freecodecamp.org/illich570" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-free-code-camp fa-2x"></i>
+        </a>
+        <a href="https://www.codepen.io/illich570" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-codepen fa-2x"></i>
+        </a>
+        <a href="https://www.github.com/illich570" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github fa-2x"></i>
+        </a>
+        <a href="https://www.twitter.com/illichr" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-twitter fa-2x"></i>
+        </a>
+      </div>
+    </footer>
+
+  </body>
 </html>
