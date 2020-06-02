@@ -18,18 +18,28 @@
       Será almacenada en una base de datos y se podrá consultar mediante la URL de este proyecto.
     </p>
 
-    <form method="POST" action="/api/shorturl/new" class="bg-white shadow-md rounded px-6 py-4">
+    <form class="bg-white shadow-md rounded px-6 py-4">
       <div class="flex flex-col text-center">
-        <label class="block text-gray-500 font-bold mb-2" id="url">URL a acortar:</label>
-        <input name="url" id="url" placeholder="E.X: https://freecodecamp.org" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 text-xs"/>
-        <div class="mt-4 flex items-center self-center" type="text" value="soy tu mama">
+        <label for="url-input" class="block text-gray-500 font-bold mb-2">URL a acortar:</label>
+        <input name="url-input" id="url-input" placeholder="E.X: https://freecodecamp.org" 
+        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 text-xs"
+        type="text"
+        />
+        <div class="mt-4 flex items-center self-center">
           <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-            type="submit">
+            type="button" onclick="postUrl()">
           Acortar
           </button>
         </div>
       </div>
     </form>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="modal-data">Some text in the Modal..</p>
+      </div>
+    </div>
 
     <div class="text-center block flex flex-col my-10">
       <span>Ejemplo de uso:</span>
@@ -56,6 +66,6 @@
         </a>
       </div>
     </footer>
-
+    <script src="/js/index.js"></script>
   </body>
 </html>

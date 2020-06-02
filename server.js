@@ -17,7 +17,7 @@ Server.use(bodyParser.urlencoded({ extended: true }));
 Server.use(express.static('public'));
 Server.use(cors());
 
-const getLastUrlId = async (done) => {
+const getLastUrlId = async () => {
  return await UrlModel.find({}).sort({ _id: -1 }).limit(1).select('-_id url_id');
 };
 
@@ -31,6 +31,10 @@ function lookURL(url) {
       console.log(err);
       return false;
     });
+}
+
+const getUrl = async (id) =>{
+  return await UrlModel.find({url_id: id});
 }
 
 Server.get('/', async (req,res) =>{
@@ -63,8 +67,17 @@ Server.post('/api/shorturl/new', validateURL, async(req,res) =>{
       });
     })
   }else{
-    res.send('Error');
+    res.send({
+      error : 'invalid URL'
+    });
   }
+})
+
+Server.get('/api/shorturl/:id', async (req,res) =>{
+  console.log(req.params);
+  const result = await getUrl(req.params.id);
+  const url = result[0].original_url;
+  res.redirect();
 })
 
 Server.listen(process.env.PORT || 3000, function () {
