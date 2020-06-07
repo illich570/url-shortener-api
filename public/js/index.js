@@ -12,7 +12,7 @@ const postUrl = async () => {
     body: JSON.stringify(data)
   });
    const response = await postData.json();
-   const modal = document.getElementById('myModal');
+   const modal = document.getElementById('modal');
    const buttonModal = document.getElementsByClassName('close')[0];
    const dataModal = document.getElementById('modal-data');
    if(response.error){
@@ -22,7 +22,7 @@ const postUrl = async () => {
       y su id es ${response.short_url}, pruebalo en la url!`;  
    }
 
-   modal.style.display = 'block';
-   buttonModal.onclick = () => modal.style.display = "none";
-   window.onclick = (event) => event.target == modal ? modal.style.display = 'none' : '';
+   modal.classList.add('active');
+   buttonModal.onclick = () => modal.classList.remove('active')
+   window.onclick = (event) => event.target == modal ? modal.classList.remove('active') : '';
 }

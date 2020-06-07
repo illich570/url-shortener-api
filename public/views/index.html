@@ -4,29 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/styles.css" type="text/css">
-  <link rel="stylesheet" href="/css/modal.css" type="text/css">
+  <link rel="stylesheet" href="/css/base.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/35e9411073.js" crossorigin="anonymous"></script>
-  <title>Boilerplate</title>
-</head>
-<body class="bg-purple-200">
-  <header>
-    <h1 class="text-xl text-center">URL-Shortener API</h1>
-  </header>
-  <main role="main" class="mx-4 text-sm">
 
-    <p class="text-justify px-3 py-2 mb-2">Esto es un ejercicio de una API que permita acortar una url valida entregada por el usuario.
+  <title>Url-shortener</title>
+</head>
+<body class="bg-green-700">
+  <header>
+    <h1 class="text-xl text-center p-4 text-white title">URL-Shortener API</h1>
+  </header>
+  <main role="main" class="mx-4 text-sm md:mt-20 md:mx-10 lg:mx-20">
+
+    <p class="text-justify px-3 py-2 mb-2 md:px-12 lg:text-center lg:mx-auto lg:p-0 lg:w-3/4 ">Esto es un ejercicio de una API que permita acortar una url valida entregada por el usuario.
       Será almacenada en una base de datos y se podrá consultar mediante la URL de este proyecto.
     </p>
 
-    <form class="bg-white shadow-md rounded px-6 py-4">
+    <form class="bg-white shadow-md rounded px-6 py-4 lg:w-3/4 lg:mx-auto lg:my-6">
       <div class="flex flex-col text-center">
-        <label for="url-input" class="block text-gray-500 font-bold mb-2">URL a acortar:</label>
-        <input name="url-input" id="url-input" placeholder="E.X: https://freecodecamp.org" 
-        class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 text-xs"
+        <label for="url-input" class="block text-gray-700 font-bold mb-2">URL a acortar:</label>
+        <input name="url-input" id="url-input" placeholder="E.X: freecodecamp.org" 
+        class="bg-gray-300 appearance-none border-2 border-gray-400 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500 text-xs"
         type="text"
         />
         <div class="mt-4 flex items-center self-center">
-          <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+          <button class="shadow bg-green-500 hover:bg-green-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
             type="button" onclick="postUrl()">
           Acortar
           </button>
@@ -34,24 +36,24 @@
       </div>
     </form>
 
-    <div id="myModal" class="modal">
+    <div id="modal" class="modal">
       <div class="modal-content">
-        <span class="close">&times;</span>
-        <p id="modal-data">Some text in the Modal..</p>
+        <p id="modal-data" class="text-justify my-3">Some text in the Modal..</p>
+        <span class="close self-center shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none rounded px-2 ">&times;</span>
       </div>
     </div>
 
-    <div class="text-center block flex flex-col my-10">
+    <div class="text-center block flex flex-col my-10 lg:my-12">
       <span>Ejemplo de uso:</span>
-      <span>[Project_URL/api/shorturl/1]</span>
-      <span>Te llevara a: https://codepen.io/illich570</span>
+      <span class="text-white">[Project_URL/api/shorturl/1]</span>
+      <span>Te llevara a: codepen.io/illich570</span>
     </div>
   </main>
 
 
     <footer class="fixed bottom-0 flex flex-col w-full text-center">
       <span class="text-sm">Url-shortener made by @IllichR</span>
-      <div class="text-purple-500">
+      <div class="text-white">
         <a href="https://www.freecodecamp.org/illich570" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-free-code-camp fa-2x"></i>
         </a>

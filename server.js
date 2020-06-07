@@ -77,7 +77,7 @@ Server.get('/api/shorturl/:id', async (req,res) =>{
   console.log(req.params);
   const result = await getUrl(req.params.id);
   const url = result[0].original_url;
-  res.redirect();
+  res.redirect(`https://www.${url}`);
 })
 
 Server.listen(process.env.PORT || 3000, function () {
